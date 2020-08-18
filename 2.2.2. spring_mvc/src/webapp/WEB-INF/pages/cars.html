@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${locale}" />
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+    <style>
+        table{
+            width: 100%;
+            background: white;
+            color: blue;
+            border-spacing: 1px;
+        }
+        td, th {
+            background: bisque;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<table boarder="1">
+
+    <tr style="border: 2px solid black">
+        <td th:text="${locale}"/>
+
+    </tr>
+    <tr>
+        <th> MODEL </th>
+        <th> POWER </th>
+        <th> ENGINE VOLUME</th>
+    </tr>
+    <th:block th:each="crs : ${cars}">
+        <tr style="border: 2px solid black">
+            <td th:text="${crs.model}" />
+            <td th:text="${crs.power}" />
+            <td th:text="${crs.enginVolum}" />
+
+        </tr>
+    </th:block>
+
+    </tr>
+</table>
+<!--<div>-->
+<!--    <th:block th:each="crs : ${cars}">-->
+<!--        <h1 th:text="${crs}"></h1>-->
+<!--    <th:block/>-->
+<!--</div>-->
+</body>
+</html>
